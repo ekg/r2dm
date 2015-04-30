@@ -9,6 +9,8 @@ Reference sequence is 3607bp long.
 101.095285
 ```
 
+## TOPO cloning primers
+
 ### Putative primers.
 
 Forward: 
@@ -38,9 +40,15 @@ oligotm $(cat primer.3p)
 
 Secondary primers, somewhere in the middle?
 
-## restriction enzymes
+## PCR cloning technique
+
+Following [Addgene's documentation on plasmid cloning by PCR](http://www.addgene.org/plasmid-protocols/pcr-cloning/). I'd like to clone into [pUC21-Notl](http://www.addgene.org/51659/).
+
+### restriction enzymes
 
 Cutters (from [Addgene analyzer](http://www.addgene.org/tools/analyze/0bfaeda1a36d2cdf330810bfdc8219ea1fc94172/default/)).
+I simply pasted r2dm.fa into the analyzer, so this can be done again if the
+link is down.
 
 ```text
 ==> dm6.r2dm.X_23220092-23223699.cutters <==
@@ -97,3 +105,5 @@ These are in order on [pUC21-NotI](http://www.addgene.org/51659/). Using BamHI
 * give a bit of space between the two restriction sites,
 * put the inserted sequence in the middle of the multiple restriction locus,
 * and would only drop XmaI and SmaI from the plasmid.
+
+### primers for PCR cloning into pUC21-Notl
