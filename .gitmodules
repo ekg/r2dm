@@ -1,0 +1,3 @@
+[submodule "restriction-digest"]
+	path = restriction-digest
+	url = https://github.com/erasche/restriction-digest.git

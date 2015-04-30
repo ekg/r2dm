@@ -37,3 +37,63 @@ oligotm $(cat primer.3p)
 ```
 
 Secondary primers, somewhere in the middle?
+
+## restriction enzymes
+
+Cutters (from [Addgene analyzer](http://www.addgene.org/tools/analyze/0bfaeda1a36d2cdf330810bfdc8219ea1fc94172/default/)).
+
+```text
+==> dm6.r2dm.X_23220092-23223699.cutters <==
+NdeI    65
+EcoRV   310
+SacI    528
+NarI    697
+MscI    1373
+BglII   1601
+KpnI    1743
+NotI    1908
+ApaI    2563
+PstI    2982
+DraI    3310
+
+==> pUC21-Notl.cutters <==
+StuI    29
+XhoI    31
+HindIII 67
+PstI    83
+SalI    85
+BamHI   91
+XmaI    96
+SmaI    98
+PacI    107
+AscI    112
+BglII   119
+SacI    137
+EcoRI   139
+XbaI    184
+```
+
+Finding ones in the plasmid but not our target.
+
+```sh
+ % for cutter in $(cat pUC21-Notl.cutters | cut -f 1); do echo $cutter $(grep $cutter dm6.r2dm.X_23220092-23223699.cutters); done \
+    | grep -v ' ' | parallel 'grep {} pUC21-Notl.cutters'
+StuI    29
+XhoI    31
+HindIII 67
+SalI    85
+BamHI   91
+XmaI    96
+SmaI    98
+PacI    107
+AscI    112
+EcoRI   139
+XbaI    184
+```
+
+These are in order on [pUC21-NotI](http://www.addgene.org/51659/). Using BamHI
+(5') and PacI (3') would:
+
+* give a bit of space between the two restriction sites,
+* put the inserted sequence in the middle of the multiple restriction locus,
+* and would only drop XmaI and SmaI from the plasmid.
