@@ -1,3 +1,3 @@
 # R2Dm
 
-## a target primed revers transcription based transposon
+## a target primed reverse transcription transposon
