@@ -28,6 +28,8 @@ Reverse:
 # GATCGCGGAGGTATGGAAAT
 ```
 
+(Un-chopped version ordered, but may not use initially.)
+
 Secondary primers, somewhere in the middle (1632 bp):
 
 ```sh
@@ -46,4 +48,4 @@ oligotm $(cat primer.mid.5p)
 # 60.706056
 ```
 
-Note that the two-step PCR would yield intermediate products of 1632 and 1953 bp.
+Note that the two-step PCR would yield intermediate products of 1632bp and 1953bp. A full-length product should be 3585bp.
