@@ -16,8 +16,8 @@ Reference sequence is 3607bp long.
 Forward: 
 
 ```sh
-samtools faidx r2dm.fa r2dm:1-22 | tail -1 >primer.5p
-# TTGGGGATCATGGGGTATTTGA
+samtools faidx r2dm.fa r2dm:1-21 | tail -1 >primer.5p
+# TTGGGGATCATGGGGTATTTG
 ```
 
 Reverse:
@@ -39,7 +39,7 @@ Tm are within 5C. Oligtm is in `primer3`.
 
 ```sh
 oligotm $(cat primer.5p)
-# 65.334608
+# 63.738920
 oligotm $(cat primer.3p)
 # 62.018127
 oligotm $(cat primer.mid.5p)
