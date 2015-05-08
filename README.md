@@ -45,3 +45,5 @@ oligotm $(cat primer.3p)
 oligotm $(cat primer.mid.5p)
 # 60.706056
 ```
+
+Note that the two-step PCR would yield intermediate products of 1632 and 1953 bp.
